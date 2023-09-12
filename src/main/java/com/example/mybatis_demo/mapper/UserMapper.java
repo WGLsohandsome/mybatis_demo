@@ -5,6 +5,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
+
 @Mapper
 public interface UserMapper {
     //查询所有
@@ -12,6 +13,8 @@ public interface UserMapper {
 
     public UserName getById(@Param("uid") Integer id);
 
-    public UserName getByName(@Param("username")String username);
+    public UserName getByName(@Param("username") String username);
+
+    public int add(@Param("id") int id,@Param("username") String username);
 }
 

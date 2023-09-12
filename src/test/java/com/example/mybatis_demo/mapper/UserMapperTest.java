@@ -31,6 +31,7 @@ class UserMapperTest {
     void getByName() {
         UserName userName = userMapper.getByName("is");
         System.out.println(userName.toString());
+        System.out.println(" ");
     }
 }
 

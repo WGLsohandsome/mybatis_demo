@@ -10,11 +10,24 @@
     </select>
 
     <select id="getById" resultType="com.example.mybatis_demo.model.UserName">
--- 传参要保持param一致
-        select * from username where id=${uid}
+        -- 传参要保持param一致
+        select *
+        from username
+        where id = ${uid}
     </select>
 
     <select id="getByName" resultType="com.example.mybatis_demo.model.UserName">
         select * from username where username like concat('%',#{username},'%')
     </select>
+
+    <insert id="add">
+        insert into username(id,
+                             <if test="username!=null">
+                                 username
+                             </if> )
+        values (#{id}
+        <if test="username!=null">
+            ,#{username}
+        </if>)
+    </insert>
 </mapper>
